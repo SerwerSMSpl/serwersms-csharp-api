@@ -56,9 +56,9 @@ Wysyłka SMS
             
             String phone = "500600700";
             String text = "text";
-            String sender = "Informacja";
+            String sender = "INFORMACJA";
             data.Add("details" , true );
-			var response  = serwerssms.sendSms(phone,text,sender,data).ToString();
+			var response  = serwerssms.messages.sendSms(phone,text,sender,data).ToString();
 			Console.WriteLine(response);
 			
 			// SMS ECO
@@ -96,7 +96,7 @@ Wysyłka spersonalizowanych SMS
 			var serwerssms = new SerwerSMS("username","password");
 			var data = new Dictionary<string, string>();
            
-            String sender = "Informacja";
+            String sender = "INFORMACJA";
             
             var item = new Dictionary<string, string>();
 			item.Add("phone", "500600700");

@@ -22,11 +22,12 @@ namespace serwersms
 	public class SerwerSMS
 	{
 		
-		private const string api_url 		= "http://api2.serwersms.pl/";
-		
+		private const string api_url 		= "http://s1api2.serwersms.pl/";
+		private const string system	 			= "client_csharp";
 		private string username 			= null;
 		private string password 			= null;
-		public string format	 			= "xml";
+		public string format	 			= "json";
+		
 		
 		public Messages messages 			= null;
 		public Files files 					= null;
@@ -76,7 +77,7 @@ namespace serwersms
 
 			data["username"] = this.username;
 			data["password"] = this.password;
-			
+			data["system"]   = system;
 			string json = JsonConvert.SerializeObject(data);
 			
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(api_url+url+"."+format);
@@ -104,14 +105,14 @@ namespace serwersms
             	return responseReader.ReadToEnd();
             	
             }      
-
+		
         }
 		public Stream callStream( String url, Dictionary<String, String> data )
         {
 
 			data["username"] = this.username;
 			data["password"] = this.password;
-			
+			data["system"] 	 = system;
 			string json = JsonConvert.SerializeObject(data);
 			
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(api_url+url);

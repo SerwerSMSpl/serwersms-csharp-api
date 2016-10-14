@@ -157,5 +157,6 @@ C# ver. 6.0
 ## Dokumentacja
 http://dev.serwersms.pl
 
-## Konsola web
+Konsola
+
 http://apiconsole.serwersms.pl/

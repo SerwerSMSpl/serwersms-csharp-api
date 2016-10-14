@@ -57,7 +57,7 @@ Wysyłka SMS
             String phone = "500600700";
             String text = "text";
             String sender = "INFORMACJA";
-            data.Add("details" , true );
+            data.Add("details" , "1" );
 			var response  = serwerssms.messages.sendSms(phone,text,sender,data).ToString();
 			Console.WriteLine(response);
 			
@@ -156,3 +156,6 @@ C# ver. 6.0
 
 ## Dokumentacja
 http://dev.serwersms.pl
+
+## Konsola web
+http://apiconsole.serwersms.pl/

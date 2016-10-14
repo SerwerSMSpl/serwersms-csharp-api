@@ -157,6 +157,6 @@ C# ver. 6.0
 ## Dokumentacja
 http://dev.serwersms.pl
 
-Konsola
+Konsola API
 
 http://apiconsole.serwersms.pl/

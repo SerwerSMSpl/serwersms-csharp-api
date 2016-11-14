@@ -9,12 +9,12 @@
 using System;
 using System.Collections.Generic;
 using System.Net;
+using System.Text;
 using System.Web;
 using System.IO;
 using System.Xml;
 using Newtonsoft.Json;
 using serwersms.lib;
-
 
 namespace serwersms
 {
@@ -79,13 +79,13 @@ namespace serwersms
 			data["password"] = this.password;
 			data["system"]   = system;
 			string json = JsonConvert.SerializeObject(data);
-			
+		
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(api_url+url+"."+format);
             request.Method = "POST";
-            request.ContentType = "application/json"; 
-            request.ContentLength = json.Length;
+            request.ContentType = "application/json; charset=utf-8"; 
+            request.Accept = "application/json; charset=utf-8";
             
-            StreamWriter requestWriter = new StreamWriter(request.GetRequestStream(), System.Text.Encoding.ASCII);
+            StreamWriter requestWriter = new StreamWriter(request.GetRequestStream());
             requestWriter.Write(json);
             requestWriter.Close();
 
@@ -117,8 +117,9 @@ namespace serwersms
 			
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(api_url+url);
             request.Method = "POST";
-            request.ContentType = "application/json"; 
-            request.ContentLength = json.Length;
+            request.ContentType = "application/json; charset=utf-8"; 
+            request.Accept = "application/json; charset=utf-8";
+            
             
             StreamWriter requestWriter = new StreamWriter(request.GetRequestStream(), System.Text.Encoding.ASCII);
             requestWriter.Write(json);

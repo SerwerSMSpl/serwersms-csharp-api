@@ -121,7 +121,7 @@ namespace serwersms
             request.Accept = "application/json; charset=utf-8";
             
             
-            StreamWriter requestWriter = new StreamWriter(request.GetRequestStream(), System.Text.Encoding.ASCII);
+            StreamWriter requestWriter = new StreamWriter(request.GetRequestStream());
             requestWriter.Write(json);
             requestWriter.Close();
 

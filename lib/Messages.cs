@@ -111,10 +111,24 @@ namespace serwersms.lib
 		 */
 		public Object sendPersonalized( List <Dictionary<String, String>> messages,String sender = null,Dictionary<String, String> data = null) {
         	
-			var smessages = "";
+			var smessages = "[";
+			int index=0;
+			int count = messages.Count;
 			foreach(Dictionary<String, String> message in messages)
 			{
-				smessages += message["phone"]+":"+message["text"]+"]|[";
+				index++;
+				smessages += message["phone"]+":"+message["text"]+"]";
+				if(count != index){
+					smessages += "|[";
+				}
+					
+			}
+			
+			
+			if(smessages.Length == 1){
+			
+				smessages.Replace("[","");
+				
 			}
 			
 			if( data == null ){

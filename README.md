@@ -84,35 +84,35 @@ Wysyłka SMS
 			var response  = serwerssms.messages.sendMms(phone, data).ToString();
 			Console.WriteLine(response);
 			
-	} catch (Exception e) {
-		Console.WriteLine(e.Message);
-	};
+		} catch (Exception e) {
+			Console.WriteLine(e.Message);
+		};
 ```        
 Wysyłka spersonalizowanych SMS
 ```c#
 
 	try{
         		    
-			var serwerssms = new SerwerSMS("username","password");
-			var data = new Dictionary<string, string>();
-           
-			String sender = "INFORMACJA";
-            
-			var item = new Dictionary<string, string>();
-			item.Add("phone", "500600700");
-			item.Add("text", "test");
-			
-			var item1 = new Dictionary<string, string>();
-			
-			item1.Add("phone", "500600700");
-			item1.Add("text", "test2");
-			
-			List<Dictionary<string,string>> messages = new List <Dictionary<string, string>>();
-			messages.Add(item);
-			messages.Add(item1);
-            
-			var response  = serwerssms.messages.sendPersonalized(messages,sender,data).ToString();
-			Console.WriteLine(response);
+		var serwerssms = new SerwerSMS("username","password");
+		var data = new Dictionary<string, string>();
+	   
+		String sender = "INFORMACJA";
+		
+		var item = new Dictionary<string, string>();
+		item.Add("phone", "500600700");
+		item.Add("text", "test");
+		
+		var item1 = new Dictionary<string, string>();
+		
+		item1.Add("phone", "500600700");
+		item1.Add("text", "test2");
+		
+		List<Dictionary<string,string>> messages = new List <Dictionary<string, string>>();
+		messages.Add(item);
+		messages.Add(item1);
+		
+		var response  = serwerssms.messages.sendPersonalized(messages,sender,data).ToString();
+		Console.WriteLine(response);
 			
 	} catch (Exception e) {
 		Console.WriteLine(e.Message);
@@ -123,12 +123,12 @@ Pobieranie raportów doręczeń
 
 	try{
         		    
-			var serwerssms = new SerwerSMS("username","password");
-			var data = new Dictionary<string, string>();
-			data.Add("test" , "1" );
-			data.Add("id","c7d505d346,4fbf1cd942");
-			var response  = serwerssms.messages.reports(data).ToString();
-			Console.WriteLine(response);
+		var serwerssms = new SerwerSMS("username","password");
+		var data = new Dictionary<string, string>();
+		data.Add("test" , "1" );
+		data.Add("id","c7d505d346,4fbf1cd942");
+		var response  = serwerssms.messages.reports(data).ToString();
+		Console.WriteLine(response);
 			
 	} catch (Exception e) {
 		Console.WriteLine(e.Message);
@@ -139,12 +139,12 @@ Pobieranie wiadomości przychodzących
 
 	try{
         		    
-			var serwerssms = new SerwerSMS("username","password");
-			var data = new Dictionary<string, string>();
-			data.Add("test" , "1" );
-			String type = "eco";
-			var response  = serwerssms.messages.recived(type, data).ToString();
-			Console.WriteLine(response);
+		var serwerssms = new SerwerSMS("username","password");
+		var data = new Dictionary<string, string>();
+		data.Add("test" , "1" );
+		String type = "eco";
+		var response  = serwerssms.messages.recived(type, data).ToString();
+		Console.WriteLine(response);
 			
 	} catch (Exception e) {
 		Console.WriteLine(e.Message);

@@ -121,16 +121,18 @@ namespace serwersms.lib
 				if(count != index){
 					smessages += "|[";
 				}
-					
+				
 			}
+
 			
-			
+			smessages = smessages.TrimEnd(']');
+
 			if(smessages.Length == 1){
 			
 				smessages.Replace("[","");
 				
 			}
-			
+			Console.WriteLine(smessages.ToString());
 			if( data == null ){
 				
 				var arr = new Dictionary<String, String>();

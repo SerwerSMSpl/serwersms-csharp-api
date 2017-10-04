@@ -132,7 +132,7 @@ namespace serwersms.lib
 				smessages.Replace("[","");
 				
 			}
-			Console.WriteLine(smessages.ToString());
+		
 			if( data == null ){
 				
 				var arr = new Dictionary<String, String>();

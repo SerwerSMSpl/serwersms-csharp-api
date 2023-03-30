@@ -22,7 +22,7 @@ namespace serwersms
 	public class SerwerSMS
 	{
 		
-		private const string api_url 		= "http://api2.serwersms.pl/";
+		private const string api_url 		= "https://api2.serwersms.pl/";
 		private const string system	 			= "client_csharp";
 		private string username 			= null;
 		private string password 			= null;
